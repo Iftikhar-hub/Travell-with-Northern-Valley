@@ -1,0 +1,247 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<div class="hero-banner">
+    <div class="slideArrow">
+        <button id="prevSlide" class="slide-arrow left">&#10094;</button>
+        <button id="nextSlide" class="slide-arrow right">&#10095;</button>
+    </div>
+
+    <div class="hero-content">
+        <h1>Welcome to Travel With Northern Valley</h1>
+        <div class="container">
+            <h2>Explore Our Services</h2>
+            <p>
+                Explore the breathtaking beauty of northern Pakistan with us. Plan your perfect trip today!
+            </p>
+            <p>We offer amazing tours, booking options, and event management services to make your trip unforgettable.
+            </p>
+        </div>
+        <p>Your gateway to the beauty of northern Pakistan.</p>
+        <a href="{% url 'about' %}" class="btn">Learn More</a>
+    </div>
+
+</div>
+
+
+<div class="main-section">
+    <!-- left side -->
+    <div class="imageSection">
+        <section class="card-container">
+            <div class="card">
+                <img src="{% static 'images/skardu-road-trip.jpg' %}" alt="Hot Selling Skardu By Road Trip">
+                <h3>Hot Selling Skardu By Road Trip</h3>
+                <a href="https://wa.me/+923554109567">Any Query?</a>
+            </div>
+            <div class="card">
+                <img src="{% static 'images/shangilila.jpg' %}" alt="shangilila lake">
+                <h3>Shangilila Lake: The Heart Lake</h3>
+                <a href="https://wa.me/+923554109567">Any Query?</a>
+            </div>
+            <div class="card">
+                <img src="{% static 'images/Basho-valley.jpg' %}" alt="Basho Valley">
+                <h3>Basho Valley: The Hidden Gem of Pakistan</h3>
+                <a href="https://wa.me/+923554109567">Any Query?</a>
+            </div>
+            <div class="card">
+                <img src="{% static 'images/skardu-desert.jpg' %}" alt="Skardu Tour – 5 Days by Air">
+                <h3>Skardu Desrt: The Desert Known for Coldest Desert</h3>
+                <a href="https://wa.me/+923554109567">Any Query?</a>
+            </div>
+            <div class="card">
+                <img src="{% static 'images/Deosai-Plains-National-Park-Skardu.webp' %}"
+                    alt="Deosai-Plains-National-Park-Skardu">
+                <h3>Deosai Plains: National Park Skardu</h3>
+                <a href="https://wa.me/+923554109567">Any Query?</a>
+            </div>
+            <div class="card">
+                <img src="{% static 'images/Manthokha Waterfall Skardu.jpg' %}" alt="Manthokha Waterfall Skardu:">
+                <h3>Manthokha Waterfall Skardu</h3>
+                <a href="https://wa.me/+923554109567">Any Query?</a>
+            </div>
+
+        </section>
+    </div>
+
+    <!-- right side -->
+    
+    <div class="tip-card">
+        <h1>Recommended Trip</h1>
+        {% for tip in tips %}
+        <div class="recomded">
+            <img src="{{ tip.image }}" alt="{{ tip.title }}">
+            <a href="{% url 'trip_detail' tip.id %}">{{ tip.title }}</a>
+            <p>{{ tip.tenure }}</p>
+        </div>
+        
+        
+        
+        {% endfor %}
+    </div>
+    
+  
+</div>
+
+<!-- Best time to visit -->
+<div class="visit-section animate-on-scroll">
+    <h2 class="visit-heading">Best Time to Visit North</h2>
+    <p class="visit-description">
+        The northern areas of Pakistan Gilgit-Baltistan, offer some of the most breathtaking landscapes on
+        earth. From blossom-covered valleys to snow-draped peaks, each season brings its own charm.
+    </p>
+
+    <!-- Visit Cards -->
+    <div class="visit-card">
+        <div class="fff">
+            <h3>🌸 Hunza Valley</h3>
+            <p>Best from April to October. Enjoy cherry blossoms in spring (March–April) and golden autumn in October, along
+            with clear skies and mountain views.</p>
+
+        </div>
+        <div class="visit-image">
+            <img src="{% static 'images/hunza2.jpg' %}" alt="Hunza Valley">
+        </div>
+    </div>
+    <div class="visit-card">
+        <div class="fff">
+            <h3>🏔️ Skardu</h3>
+            <p>Visit from June to September. Experience the surreal beauty of lakes, cold deserts, and the vast Deosai
+                Plains during mild summer weather.</p>
+        </div>
+        <div class="visit-image">
+            <img src="{% static 'images/skardu2.jpg' %}" alt="skardu Valley">
+        </div>
+        
+    </div>
+    <div class="visit-card">
+        <div class="fff">
+            <h3>⛺ Fairy Meadows</h3>
+            <p>Best from May to September. Ideal for camping and hiking with stunning views of Nanga Parbat and clear night
+                skies.
+            </p>
+        </div>
+        <div class="visit-image">
+            <img src="{% static 'images/Fairy-Meadows.jpg' %}" alt="Fairy-Meadows Valley">
+        </div>
+            
+    </div>
+    <div class="visit-card">
+        <div class="fff">
+            <h3>🌉 Khunjerab Pass</h3>
+            <p>Accessible from May to October. The high-altitude border crossing offers breathtaking views and is open only
+                during snow-free months.
+            </p>
+        </div>
+        <div class="visit-image">
+            <img src="{% static 'images/Khunjerab-Pass.jpg' %}" alt="Khunjerab-Pass Valley">
+        </div>
+    </div>
+    <div class="visit-card">
+        <div class="fff">
+            <h3>🌄 Phander Valley</h3>
+            <p>Best from June to August. Enjoy the serene lake, trout fishing, and vibrant green scenery in peaceful
+                surroundings.
+            </p>
+        </div>
+        <div class="visit-image">
+            <img src="{% static 'images/Phander-Valley.jpg' %}" alt="Phander-Valley">
+        </div>
+    </div>
+
+    <!-- Hidden Cards (Initially Hidden) -->
+    <div class="visit-card hidden">
+        <div class="fff">
+            <h3>🏞️ Rama Meadows (Astore)</h3>
+            <p>Best from July to September. The meadows bloom with flowers and offer perfect weather for hikes to the
+                stunning Rama Lake.
+            </p>
+        </div>
+        <div class="visit-image">
+            <img src="{% static 'images/Rama-Meadows.jpg' %}" alt="Rama-Meadows">
+        </div>
+    </div>
+    <div class="visit-card hidden">
+        <div class="fff">
+            <h3>🎿 Naltar Valley</h3>
+            <p>Visit from May to October for its colorful lakes and pine forests. Skiing is also popular in winter
+                (December–February) with heavy snowfall.
+            </p>
+        </div>
+        <div class="visit-image">
+            <img src="{% static 'images/Naltar.jpg' %}" alt=" Naltar Valley">
+        </div>
+    </div>
+    <div class="visit-card hidden">
+        <div class="fff">
+            <h3>🏡 Bagrot Valley</h3>
+            <p>Best from April to October. A hidden gem known for traditional villages, green fields, and views of
+                Rakaposhi.
+            </p>
+        </div>
+        <div class="visit-image">
+            <img src="{% static 'images/Bagrot.jpg' %}" alt=" Bagrot Valley">
+        </div>
+    </div>
+    <div class="visit-card hidden">
+        <div class="fff">
+            <h3>🏰 Shigar Valley</h3>
+            <p>Visit from May to September. Explore Shigar Fort and experience Balti culture amid dramatic mountain scenery.
+            </p>
+        </div>
+        <div class="visit-image">
+            <img src="{% static 'images/Shigar2.jpg' %}" alt="Shigar Valley">
+        </div>
+    </div>
+    <div class="visit-card hidden">
+        <div class="fff">
+            <h3>🌊 Khalti Lake (Ghizer)</h3>
+            <p>Best from June to August. Crystal-clear waters perfect for fishing and boating, surrounded by tranquil
+                mountains.
+            </p>
+        </div>
+        <div class="visit-image">
+            <img src="{% static 'images/Khalti-Lake.jpg' %}" alt="Khalti-Lake ">
+        </div>
+
+    </div>
+
+    <!-- Final 2 Cards (Also Initially Hidden) -->
+    <div class="visit-card hidden">
+        <div class="fff">
+            <h3>🍎 Minapin & Rakaposhi Base Camp</h3>
+            <p>Visit from May to October. Famous for trekking and apple orchards, with a stunning view of the Rakaposhi
+                glacier.
+            </p>
+        </div>
+        <div class="visit-image">
+            <img src="{% static 'images/Rakaposhi.jpg' %}" alt="Rakaposhi Camp">
+        </div>
+    </div>
+    <div class="visit-card hidden">
+       <div class="fff">
+        <h3>🕊️ Yasin Valley</h3>
+        <p>Best from June to September. Peaceful atmosphere, rich culture, and great trekking routes make it a perfect
+            escape from crowds.
+        </p>
+       </div>
+        <div class="visit-image">
+            <img src="{% static 'images/Yasin.jpg' %}" alt="Yasin Valley">
+        </div>
+    </div>
+
+    <!-- Explore More / See Less Button -->
+    <button class="nv-btn" id="exploreBtn"><span>Explore More</span></button>
+
+    <!-- Always Visible -->
+    <a href="#contact" class="nv-btn"><span>Plan Your Visit</span></a>
+</div>
+
+
+
+
+
+
+{% endblock %}

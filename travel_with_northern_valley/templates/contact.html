@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<div class="hero-banner">
+    <div class="slideArrow">
+        <button id="prevSlide" class="slide-arrow left">&#10094;</button>
+        <button id="nextSlide" class="slide-arrow right">&#10095;</button>
+    </div>
+
+    <div class="hero-content">
+        <h1>Contact us</h1>
+        <div class="container">
+            <h2>Explore Our Services</h2>
+            <p>
+                Explore the breathtaking beauty of northern Pakistan with us. Plan your perfect trip today!
+            </p>
+        </div>
+        <p>Your gateway to the beauty of northern Pakistan.</p>
+    </div>
+</div>
+
+
+<div class="container">
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+            {% endfor %}
+    </ul>
+    {% endif %}
+    
+    <!-- Display form errors -->
+    {% if form.errors %}
+    <ul class="alert alert-danger">
+        {% for field, errors in form.errors.items %}
+        <li>
+            <strong>{{ field }}</strong>: {{ errors|join:", " }}
+        </li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    <p>
+        Got questions or feedback? We'd love to hear from you! Reach out to us via WhatsApp or email:
+    </p>
+    <div class="contact-info">
+        <p><strong>WhatsApp:</strong> <a href="https://wa.me/923554109567" target="_blank" rel="noopener">+92 355 4109567</a></p>
+        <p><strong>Email:</strong> <a href="mailto:abdulsaboor4044@gmail.com">abdulsaboor4044@gmail.com</a></p>
+    </div>
+
+    <h2>Send us a message</h2>
+    <form method="post" action="">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Send Message</button>
+    </form>
+</div>
+
+<style>
+    .messages {
+        list-style: none;
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 5px;
+    }
+
+    .messages li {
+        padding: 10px;
+        margin-bottom: 5px;
+    }
+
+    .messages li.success {
+        background-color: #d4edda;
+        color: #155724;
+        border: 1px solid #c3e6cb;
+    }
+</style>
+    
+{% endblock %}

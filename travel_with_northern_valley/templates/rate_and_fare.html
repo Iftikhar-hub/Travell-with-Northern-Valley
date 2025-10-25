@@ -1,0 +1,179 @@
+{% extends "base.html" %}
+
+{% block title %}Rate and Fare{% endblock %}
+
+{% block content %}
+<div class="hero-banner">
+    <div class="slideArrow">
+        <button id="prevSlide" class="slide-arrow left">&#10094;</button>
+        <button id="nextSlide" class="slide-arrow right">&#10095;</button>
+    </div>
+
+    <div class="hero-content">
+        <h1>Rates and Fare Details</h1>
+        <div class="container">
+            <h2>Explore Our Services</h2>
+            <p>
+                Explore the breathtaking beauty of northern Pakistan with us. Plan your perfect trip today!
+            </p>
+        </div>
+        <p>Your gateway to the beauty of northern Pakistan.</p>
+    </div>
+</div>
+
+<div class="rate-fare-section">
+    <h1>Rate and Fare Details</h1>
+
+    <div class="tabs">
+        <button class="tablink active" data-tab="khar">Khar Hotel Skardu</button>
+        <button class="tablink" data-tab="serena">SERENAKHAPLU PALACE</button>
+        <button class="tablink" data-tab="shangrila">Shangrila Resort</button>
+        <button class="tablink" data-tab="himmle">Himmle Skardu By Luxus</button>
+        <button class="tablink" data-tab="qayam">Qayam Skardu Cooperate</button>
+    </div>
+
+    <div id="khar" class="tab-content active">
+        <h2>Khar Hotel Skardu</h2>
+        <table class="rate-table">
+            <thead>
+                <tr>
+                    <th>Room Type</th>
+                    <th>Occupancy</th>
+                    <th>Base Rate</th>
+                    <th>Discounted Rate (10%)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Twin Master Room</td>
+                    <td>3 Persons</td>
+                    <td>PKR 35,000</td>
+                    <td>PKR 31,500</td>
+                </tr>
+                <tr>
+                    <td>Master Room</td>
+                    <td>2 Persons</td>
+                    <td>PKR 32,500</td>
+                    <td>PKR 29,200</td>
+                </tr>
+            </tbody>
+        </table>
+        <p><strong>Extra Guest:</strong> PKR 3,500/night (incl. mattress & breakfast)</p>
+        <p><strong>Included:</strong> Welcome drink, breakfast, Wi-Fi, bottled water, A/C, minibar, room service</p>
+        <p><strong>Check-In:</strong> 2 PM | <strong>Check-Out:</strong> 12 PM</p>
+        <p><strong>Late Checkout Charges:</strong> 12–2 PM: possible with notice | 2–4 PM: 50% | After 4 PM: Full charge</p>
+    </div>
+    
+    <div id="serena" class="tab-content">
+        <h2>SERENAKHAPLU PALACE</h2>
+        <table class="rate-table">
+            <thead>
+                <tr>
+                    <th>Room Type</th>
+                    <th>Domestic</th>
+                    <th>Foreigners</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Garden Room</td>
+                    <td>PKR 26,000</td>
+                    <td>USD 120</td>
+                </tr>
+                <tr>
+                    <td>Fort Room</td>
+                    <td>PKR 26,000</td>
+                    <td>USD 125</td>
+                </tr>
+                <tr>
+                    <td>Heritage Suite</td>
+                    <td>PKR 50,000</td>
+                    <td>USD 150</td>
+                </tr>
+                <tr>
+                    <td>Royal Suite</td>
+                    <td>PKR 50,000</td>
+                    <td>USD 170</td>
+                </tr>
+            </tbody>
+        </table>
+        <p><strong>Additional Person:</strong> PKR 3,000 / USD 30 (incl. breakfast & mattress)</p>
+        <p><strong>Includes:</strong> Free breakfast, museum & fort tour, spouse stays free</p>
+        <p><strong>Payment:</strong> Cash only</p>
+        <p><strong>Cancellation:</strong> <br>Less than 15 days: 100% charge <br>Less than 20 days: 50% charge</p>
+    </div>
+    
+    <div id="shangrila" class="tab-content">
+        <h2>Shangrila Resort</h2>
+        <p>Details will be added soon.</p>
+    </div>
+    
+    <div id="himmle" class="tab-content">
+        <h2>Himmle Skardu By Luxus</h2>
+        <p>Details will be added soon.</p>
+    </div>
+    
+    <div id="qayam" class="tab-content">
+        <h2>Qayam Skardu Cooperate – Room Rates</h2>
+    
+        <h3>Peak Season (May 16 – Sept 15, 2025)</h3>
+        <table class="rate-table">
+            <thead>
+                <tr>
+                    <th>Room Type</th>
+                    <th>Rate (PKR)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Deluxe</td>
+                    <td>PKR 19,000</td>
+                </tr>
+                <tr>
+                    <td>Executive</td>
+                    <td>PKR 21,500</td>
+                </tr>
+                <tr>
+                    <td>Deluxe Fort</td>
+                    <td>PKR 27,000</td>
+                </tr>
+                <tr>
+                    <td>Executive Fort</td>
+                    <td>PKR 29,000</td>
+                </tr>
+            </tbody>
+        </table>
+    
+        <h3>Off Season (Sept 16 – Dec 31, 2025)</h3>
+        <table class="rate-table">
+            <thead>
+                <tr>
+                    <th>Room Type</th>
+                    <th>Rate (PKR)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Deluxe</td>
+                    <td>PKR 13,000</td>
+                </tr>
+                <tr>
+                    <td>Executive</td>
+                    <td>PKR 17,000</td>
+                </tr>
+                <tr>
+                    <td>Deluxe Fort</td>
+                    <td>PKR 21,000</td>
+                </tr>
+                <tr>
+                    <td>Executive Fort</td>
+                    <td>PKR 26,000</td>
+                </tr>
+            </tbody>
+        </table>
+    
+        <p><strong>Note:</strong> Children under 5 stay free.</p>
+    </div>
+    
+</div>
+{% endblock %}

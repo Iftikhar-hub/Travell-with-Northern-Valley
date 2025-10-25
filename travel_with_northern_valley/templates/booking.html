@@ -1,0 +1,128 @@
+{% extends "base.html" %}
+
+{% block title %}Booking{% endblock %}
+
+{% block content %}
+
+{% load static %}
+<script src="{% static 'js/booking.js' %}"></script>
+<!-- Hero Banner -->
+<section class="about-hero-banner">
+    <div class="about-hero-content">
+        <h1>Book Your Desired Location</h1>
+        <p>Discover the beauty of Pakistan's northern valleys with us.</p>
+        <p>Explore the stunning landscapes of the northern valleys with us!</p>
+    </div>
+</section>
+
+<div class="trip-list-page">
+    <div id="confirmationMessage"></div>
+    <h1 id="availableTrip">Available Trips</h1>
+    <div class="trip-card-container">
+        {% for tip in travel_tips %}
+        <div class="trip-card fade-slide-up">
+            <img src="{{ tip.image }}" alt="{{ tip.title }}">
+            <h3>{{ tip.title }}</h3>
+            <p>{{ tip.tenure }}</p>
+            <a href="{% url 'trip_detail' tip.id %}">View Details</a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<div class="bookingImageSection animate-on-scroll">
+    {% for tip in travel_tips %}
+    <div class="BoookingTripHead fade-slide-up">
+        <img src="{{ tip.image }}" alt="{{ tip.title }}">
+        <h1 id="bookingTripTiltle">{{ tip.title }}</h1><br>
+        <h3> {{ tip.tenure }} </h3>
+    </div>
+    <button class="btn-bookNow" id="bookNow" data-tip-id="{{ tip.id }}"><span>Book Now</span></button>
+    {% endfor %}
+    <p id="confirmBookingText">Please Visit Booking Page To Confirm Your Booking</p>
+    {% for day in itinerary_days %}
+    <div class="booking-day-card fade-slide-up">
+        <div class="BDCard">
+            <h3>Day {{ day.day_number }}: {{ day.title }}</h3>
+            <p>{{ day.description }}</p>
+        </div>
+        <div class="booking-card-container">
+            {% for img_key, img_data in day.images.items %}
+            <div class="booking-image-card">
+                <img src="{{ img_data.image }}" alt="{{ img_data.caption }}">
+                <p>{{ img_data.caption }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<!-- Booking Modal Form -->
+<div id="bookingModal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closeModal">&times;</span>
+        <form method="post" id="bookingForm">
+            {% csrf_token %}
+            <input type="hidden" name="tip_id" id="hiddenTipId">
+            <!-- Step 1 -->
+            <div class="form-step form-step-active">
+                <label for="full_name">Full Name</label>
+                <input type="text" id="full_name" name="full_name" required>
+
+                <label for="cnic">CNIC/Passport Number</label>
+                <input type="text" id="cnic" name="cnic" required>
+
+                <label for="gender">Gender</label>
+                <select id="gender" name="gender" required>
+                    <option value="">Select Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+
+                <button type="button" class="next-btn">Next</button>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="form-step">
+                <label for="country">Country</label>
+                <input type="text" id="country" name="country" required>
+
+                <label for="city">City</label>
+                <input type="text" id="city" name="city" required>
+
+                <label for="zip_code">ZIP Code</label>
+                <input type="text" id="zip_code" name="zip_code" required>
+
+                <button type="button" class="prev-btn">Previous</button>
+                <button type="button" class="next-btn">Next</button>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="form-step">
+                <label for="payment_method">Payment Method</label>
+                <select id="payment_method" name="payment_method" required>
+                    <option value="">Select Payment Method</option>
+                    <option value="Cash">Cash</option>
+                    <option value="Online">Online</option>
+                </select>
+
+                <div id="onlineOptions">
+                    <label for="online_option">Online Payment Options</label>
+                    <select id="online_option" name="online_option">
+                        <option value="EasyPaisa">EasyPaisa</option>
+                        <option value="JazzCash">JazzCash</option>
+                    </select>
+                </div>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+
+                <button type="button" class="prev-btn">Previous</button>
+                <button type="submit" id="submitBooking">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

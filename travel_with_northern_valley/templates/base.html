@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Travel with Northern Valley{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="stylesheet" href="/static/css/home.css">
+    <link rel="stylesheet" href="/static/css/about.css">
+    <link rel="stylesheet" href="/static/css/contact.css">
+    <link rel="stylesheet" href="/static/css/booking.css">
+    <link rel="stylesheet" href="/static/css/rate.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="{% static 'images/logo.png' %}" type="image/x-icon">
+
+
+    <script>
+    const bannerImages = [
+        "{% static 'images/skardu.jpg' %}",
+        "{% static 'images/thaly.jpg' %}",
+        "{% static 'images/hunza.jpg' %}",
+        "{% static 'images/gilgit.jpg' %}",
+        "{% static 'images/khaplu.jpg' %}"
+    ];
+</script>
+
+    <script src="{% static 'js/banner.js' %}"></script>
+    <script src="{% static 'js/booking.js' %}"></script>
+    <script src="{% static 'js/rate.js' %}"></script>
+    <script src="{% static 'js/responsive.js' %}"></script>
+
+
+</head>
+
+<body>
+    <header>
+    <nav class="container">
+        <div class="logo">
+            <img src="{% static 'images/logo.png' %}" alt="Northern Valley">
+            <a href="{% url 'home' %}">Travel With Northern Valley</a>
+        </div>
+
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>  </div>
+        <div class="nav-links">
+            <a href="{% url 'home' %}" class="{% if request.resolver_match.url_name == 'home' %}active{% endif %}">Home</a>
+            <a href="{% url 'about' %}" class="{% if request.resolver_match.url_name == 'about' %}active{% endif %}">About Us</a>
+            <a href="{% url 'contact' %}" class="{% if request.resolver_match.url_name == 'contact' %}active{% endif %}">Contact</a>
+            <a href="{% url 'booking_page' %}"
+                class="{% if request.resolver_match.url_name == 'booking_page' %}active{% endif %}">Booking</a>
+
+            <a href="{% url 'rate_and_fare' %}" class="{% if request.resolver_match.url_name == 'rate_and_fare' %}active{% endif %}">Rates</a>
+            <a href="{% url 'events' %}" class="{% if request.resolver_match.url_name == 'events' %}active{% endif %}">Events</a>
+        </div>
+    </nav>
+</header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-about">
+                <h2>Travel with Northern Valley</h2>
+                <p>
+                    Explore the breathtaking beauty of the northern areas of Pakistan.
+                    Plan your perfect getaway with us!
+                </p>
+            </div>
+
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'about' %}">About Us</a></li>
+                    <li><a href="{% url 'contact' %}">Contact Us</a></li>
+                    <li><a href="{% url 'booking_page' %}">Booking</a></li>
+                    <li><a href="{% url 'rate_and_fare' %}">Rates</a></li>
+                    <li><a href="{% url 'events' %}">Events</a></li>
+                </ul>
+            </div>
+            <a href="https://wa.me/+923554109567" class="whatsapp-button" target="_blank" rel="noopener">
+                <img src="{% static 'icons/whatsapp.png' %}" alt="WhatsApp">
+            </a>
+
+            <div class="footer-social">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/abdulsaboor4044?mibextid=ZbWKwL"><img src="{% static 'icons/facebook.png' %}" alt="Facebook"></a>
+                    <a href="https://www.instagram.com/travel_with_northern_valley/profilecard/?igsh=cW5jaGMzejVwNTd1"><img src="{% static 'icons/instagram.png' %}" alt="Instagram"></a>
+                    <a href="https://www.tiktok.com/@travelwithnorthernvally?_r=1"><img src="{% static 'icons/tiktok.png' %}" alt="TikTok"></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Travel with Northern Valley. All Rights Reserved.</p>
+        </div>
+    </footer>
+    
+</body>
+
+</html>

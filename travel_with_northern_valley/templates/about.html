@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
+{% endblock %}
+
+{% block content %}
+<!-- Hero Banner -->
+<section class="about-hero-banner">
+    <div class="about-hero-content">
+        <h1>About Us</h1>
+        <p>Discover the beauty of Pakistan's northern valleys with us.</p>
+    </div>
+</section>
+
+<!-- Introduction -->
+<div class="about-container about-intro">
+    <div class="about-text">
+        <p>
+            <strong>Travel With Northern Valley</strong> is committed to providing unforgettable travel experiences
+            across the breathtaking northern areas of Pakistan. Whether you're planning a peaceful getaway
+            or an adventurous trek, we’ve got you covered from booking to guided tours.
+        </p>
+    </div>
+    <div class="nv-container">
+        <h2>Discover the World with Our Tours</h2>
+        <ul>
+            <li><strong>Diverse Destinations:</strong><br> From the snowy peaks of Skardu to the lush valleys of Hunza, explore
+                Pakistan’s most breathtaking regions with us.</li>
+            <li><strong>Immersive Experiences:</strong><br> We design tours that help you feel the culture, traditions, and
+                nature of the North.</li>
+            <li><strong>Expert Guides:</strong><br> Our experienced local guides provide insight, safety, and authentic
+                adventures.</li>
+            <li><strong>Customizable Itineraries:</strong><br> Every journey is tailored to your preferences and budget.</li>
+            <li><strong>Booking Convenience:</strong><br> Book with confidence through our secure, user-friendly platform.</li>
+        </ul>
+    
+        <h2>Relax in Our Handpicked Hotels</h2>
+        <ul>
+            <li><strong>Stay in Comfort:</strong><br> From cozy guesthouses to scenic luxury lodges, we ensure the perfect stay.
+            </li>
+            <li><strong>Quality Assurance:</strong><br> Every hotel partner meets our quality and cleanliness standards.</li>
+            <li><strong>Local Flavor:</strong><br> Enjoy regional cuisine, local décor, and cultural hospitality.</li>
+            <li><strong>Genuine Reviews:</strong><br> Hear from travelers who’ve experienced the comfort firsthand.</li>
+            <li><strong>Best Price Guarantee:</strong><br> We offer competitive prices without compromising quality.</li>
+        </ul>
+    
+        <h2>Why Choose Travel with Northern Valley?</h2>
+        <p>
+            We’re more than a tour service – we’re your trusted travel partner. From planning to your return home, we’re by
+            your side to make sure every moment is memorable. Join us and discover the unmatched beauty of the northern
+            regions of Pakistan with comfort, care, and confidence.
+        </p>
+    
+        <div class="nv-cta">
+            <a href="{% url 'home' %}" class="nv-btn">Explore Tours</a>
+            <a href="{% url 'rate_and_fare' %}" class="nv-btn">Browse Hotels</a>
+        </div>
+    </div>
+</div>
+
+<!-- Mission and Vision -->
+<section class="about-mission-vision">
+    <div class="about-container">
+        <h2>Our Mission</h2>
+        <p>To make travel simple, accessible, and enriching for everyone visiting the northern gems of Pakistan.</p>
+        <h2>Our Vision</h2>
+        <p>To become the leading travel companion for domestic and international tourists exploring the north.</p>
+    </div>
+</section>
+
+<!-- Meet the Team -->
+<section class="about-team-section">
+    <div class="about-container">
+        <h2>Meet Our Team</h2>
+        <div class="about-team-grid">
+            <div class="about-team-card">
+                <img src="{% static 'images/saboor.jpg' %}" alt="Team Member 1">
+                <h4>Abdul Saboor</h4>
+                <p>Founder & Tour Specialist</p>
+                <p>+92 355 4109567</p>
+            </div>
+            <div class="about-team-card">
+                <img src="{% static 'images/mujahid.jpg' %}" alt="Team Member 2">
+                <h4>Mujahid Ali Azhar</h4>
+                <p>Customer Support</p>
+                <p>+92 347 4738822</p>
+            </div>
+            <!-- Add more team cards if needed -->
+        </div>
+    </div>
+</section>
+{% endblock %}
